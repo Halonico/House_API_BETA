@@ -35,8 +35,16 @@ catToDiscreteDict = {
                "Po" : 1,
                "None" : 0
                 },
+        "BsmtQual" : {
+               "Ex" : 5,
+               "Gd" : 4,
+               "TA" : 3,
+               "Fa" : 2,
+               "Po" : 1,
+               "None" : 0
+                },  
         "BsmtCond" : {
-                "Ex" : 5,
+               "Ex" : 5,
                "Gd" : 4,
                "TA" : 3,
                "Fa" : 2,
@@ -173,7 +181,6 @@ categories1and0 = {
         "SaleType" : "WD",
         "SaleCondition" : "Normal",
         "LandContour" : "Lvl"
-        
         }
 featuresFill0 = ["LotFrontage","MasVnrArea","BsmtHalfBath","BsmtFullBath","BsmtFinSF1","BsmtFinSF2","GarageArea","TotalBsmtSF","BsmtUnfSF","GarageCars"]
 featureFillMedian= ["GarageYrBlt"]
@@ -187,5 +194,6 @@ prediction_pipeline = Pipeline([
     ('ConvertYearFeatureToAbsolute', pp.YearToAbsolute(dateCols)),
     ('StandardizeFeatures', pp.StandardizeFeatures()),
     #('PCAReduction', pp.PCAReduction()),
-    ('ModelPrediction',XGBRegressor())
+    #('ModelPrediction',XGBRegressor())
+    ('ModelPrediction',RandomForestRegressor(max_depth=6,n_estimators=100))
 ])

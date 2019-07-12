@@ -9,9 +9,10 @@ prediction_app=Blueprint('prediction_route',__name__)
 def predict():
     json_data=request.get_json()
     df = pd.DataFrame.from_dict(json_data)
-    print(df)
+    print("BOUGNADAIRE")
     prediction=make_prediction(df)
-    return jsonify({'success':True,"prediction":prediction})
+    print(prediction)
+    return jsonify({'success':True,"prediction":prediction[0]})
 @prediction_app.route('/health', methods = ['GET'])
 def health():
     return "hello"
