@@ -16,8 +16,9 @@ def predict():
 @prediction_app.route('/health', methods = ['GET'])
 def health():
     return "hello"
-
-
+@prediction_app.route('/state', methods = ['GET'])
+def state():
+    return "Running"
 
 
 
