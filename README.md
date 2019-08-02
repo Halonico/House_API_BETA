@@ -111,6 +111,6 @@ Example of payload :
 1) Git clone the repository
 2) Go in the feature_selection's folder
 3) Run in cmd : ```pip install -r requirements.txt```
-4) Run in cmd :  ````python run.py```
+4) Run in cmd :  ```python run.py```
 
 There is also a python virtualenvironment included
